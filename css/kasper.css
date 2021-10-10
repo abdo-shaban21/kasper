@@ -202,7 +202,7 @@ header .container nav .form i {
 /* end header */
 /* start landing */
 .landing {
-  background-image: url(/images/landing.jpg);
+  background-image: url(../images/landing.jpg);
   /* useing anther background-color if image dont work  */
   background-color: #1f2021;
   background-size: cover;
@@ -664,7 +664,7 @@ header .container nav .form i {
 /* end about us */
 /* start all-about */
 .all-about {
-  background-image: url(/images/stats.png);
+  background-image: url(../images/stats.png);
   background-size: cover;
   position: relative;
   /* z-index: for up the .img; */
@@ -868,7 +868,7 @@ header .container nav .form i {
   font-size: 14px;
   padding: 4px;
   right: -18px;
-  top: -30px;
+  top: -35px;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -882,12 +882,12 @@ header .container nav .form i {
   border-style: solid;
   border-color: #000 transparent transparent transparent;
   right: -10px;
-  top: -10px;
+  top: -15px;
 }
 /* end Testimonials */
 /* start brake */
 .brake .text {
-  background-image: url(/images/quote.jpg);
+  background-image: url(../images/quote.jpg);
   background-size: cover;
   padding: 100px 0;
   position: relative;
@@ -1035,7 +1035,7 @@ sub {
 .supscribe {
   padding-bottom: var(--section-padding);
   padding-top: var(--section-padding);
-  background-image: url(/images/subscribe.jpg);
+  background-image: url(../images/subscribe.jpg);
   background-size: cover;
   position: relative;
   color: #fff;
@@ -1189,7 +1189,7 @@ sub {
 /* end contact us */
 /* start footer */
 .footer {
-  background-image: url(/images/subscribe.jpg);
+  background-image: url(../images/subscribe.jpg);
   background-size: cover;
   text-align: center;
   position: relative;
