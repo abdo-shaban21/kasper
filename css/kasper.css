@@ -1,0 +1,1239 @@
+/* start glopel rouls */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  text-transform: capitalize;
+}
+ul {
+  list-style: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* end glopel rouls */
+/* start components */
+.main-heading {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 100px;
+}
+.main-heading h2.heading {
+  font-size: 40px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0 0 70px 0;
+  position: relative;
+}
+.main-heading h2.heading::before {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  /* بنستخدم ترانسبيت اكس في حالة التوسيط الافقي و ترانسليت واي في حالة التوسيط الراسي */
+  transform: translateX(-50%);
+  width: 120px;
+  left: 50%;
+  height: 2px;
+  background-color: #333;
+}
+.main-heading h2.heading::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  bottom: -38px;
+  transform: translatex(50%);
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #333;
+  right: 50%;
+  -webkit-transform: translatex(50%);
+  -moz-transform: translatex(50%);
+  -ms-transform: translatex(50%);
+  -o-transform: translatex(50%);
+}
+.main-heading p.the-text {
+  color: #777;
+  line-height: 2;
+}
+/* end components */
+/* start vareable */
+:root {
+  --color-w: #fff;
+  --section-padding: 100px;
+  --second-color: #03a9f4;
+}
+/* end vareabel */
+/*  mobile devices  small*/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* ipads  medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* laptops  larg */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* end glopel rouls */
+/* start header */
+header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-height: 97px;
+}
+header .container::after {
+  content: " ";
+  position: absolute;
+  width: calc(100% - 30px);
+  height: 1px;
+  background-color: #a2a2a2;
+  bottom: 0px;
+}
+header .container .logo {
+  height: 40px;
+}
+header .container nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .container nav .bars-icon {
+  color: var(--color-w);
+  font-size: 22px;
+}
+@media (min-width: 768px) {
+  header .container nav .bars-icon {
+    display: none;
+  }
+}
+header .container nav ul {
+  display: flex;
+}
+
+header .container nav ul li a {
+  text-decoration: none;
+  color: var(--color-w);
+  font-size: 14px;
+  padding: 40px 10px;
+  display: block;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+@media (max-width: 767px) {
+  header .container nav ul {
+    display: none;
+  }
+  header .container nav .bars-icon:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    /* top 100% to start from end the element he inside */
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(0 0 0 /80%);
+    /* علشان يظهر فوق كل حاجه في الصفحه */
+    z-index: 5;
+  }
+  header .container nav ul li a {
+    padding: 15px;
+  }
+}
+header .container nav ul li a.active,
+header .container nav ul li a:hover {
+  color: var(--second-color);
+  border-bottom: 1px solid var(--second-color);
+  position: relative;
+  /* علشان يظهر فوق البوردر بتاع الهيدنج */
+  z-index: 3;
+}
+header .container nav .form {
+  width: 40px;
+  height: 30px;
+  margin-left: 35px;
+  position: relative;
+  border-left: 1px solid var(--color-w);
+}
+header .container nav .form i {
+  color: var(--color-w);
+  position: absolute;
+  margin-left: 10px;
+  right: 0;
+  font-size: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+/* end header */
+/* start landing */
+.landing {
+  background-image: url(/images/landing.jpg);
+  /* useing anther background-color if image dont work  */
+  background-color: #1f2021;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+.landing .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgb(0 0 0 /60%);
+  width: 100%;
+  height: 100%;
+}
+.landing .text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  color: var(--color-w);
+  padding: 50px;
+  width: 50%;
+  /* علشان يظهر ورا الينكات لما بعمل هوفر علي الايكونة ال في الهيدر  */
+  z-index: 1;
+  background-color: rgb(15 116 143 / 70%);
+  display: flex;
+  justify-content: flex-end;
+  /* this is code to center element Horizontal */
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.landing .text .content {
+  /* useing max width to be very responsive */
+  max-width: 500px;
+}
+.landing .text .content h2 {
+  font-size: 32px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+.landing .text .content p {
+  font-size: 14px;
+  line-height: 2;
+}
+.landing .right,
+.left {
+  color: var(--color-w);
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  /* for visibale up the left */
+  z-index: 2;
+  /* this is margin dont do the element in the center oclock */
+  margin: 0 30px;
+  transform: translatey(-50%);
+  -webkit-transform: translatey(-50%);
+  -moz-transform: translatey(-50%);
+  -ms-transform: translatey(-50%);
+  -o-transform: translatey(-50%);
+}
+.landing .right {
+  right: 0;
+}
+.landing .left {
+  left: 0;
+}
+@media (max-width: 767px) {
+  .landing .text {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 30px;
+  }
+  .landing .text .content {
+    max-width: 100%;
+  }
+  .landing .right,
+  .left {
+    display: none;
+  }
+}
+.landing ul.bullets {
+  position: absolute;
+  display: flex;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.landing ul.bullets li {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.landing ul.bullets .active {
+  background-color: #00bcd4;
+  border: 1px solid #00bcd4;
+}
+/* end landing */
+/* start services */
+.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.services .container .ser {
+  display: flex;
+  flex-wrap: wrap;
+  /* wrap cut after the element take full width or nowrap dont cut but shrank */
+}
+.services .container .ser .servic {
+  width: 50%;
+  display: flex;
+  /* useing badding for dont take width from element */
+  padding-right: 20px;
+}
+@media (max-width: 991px) {
+  .services .container .ser .servic {
+    width: 100%;
+  }
+}
+.services .container .ser .servic i {
+  font-size: 45px;
+  margin-right: 50px;
+}
+.services .container .ser .servic div h3 {
+  color: var(--transparent-color);
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.services .container .ser .servic div p {
+  color: #777;
+  line-height: 2;
+  font-size: 14px;
+  margin-bottom: 60px;
+}
+@media (max-width: 767px) {
+  .services .container .ser .servic {
+    flex-direction: column;
+    text-align: center;
+  }
+  .services .container .ser .servic i {
+    margin: 30px;
+  }
+  .services .container .ser .servic div h2 {
+    margin-top: 30px;
+  }
+  .services .container .ser .servic div p {
+    margin-bottom: 30px;
+  }
+}
+/* end services */
+/* start features */
+/* .features {
+  background-image: url(..//images/design-features.jpg);
+  background-size: cover;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+.features img.features-photo {
+  width: 100%;
+  z-index: 3;
+}
+.features .container img.mopile-photo {
+  position: absolute;
+  height: 490px;
+  bottom: -140px;
+  z-index: 0;
+}
+.features .right-text {
+  width: 50%;
+  position: absolute;
+  right: 0; */
+/* dont forget do the element center */
+/* transform: translateY(-50%);
+  top: 50%;
+  color: #fff;
+  background-color: rgb(15 116 143 / 70%);
+  padding: 40px 0;
+}
+@media (max-width: 768px) {
+  .features .container img.mopile-photo {
+    display: none;
+  }
+  .features .right-text {
+    width: 100%;
+  }
+  
+}
+.features .right-text h2 {
+  margin: 40px;
+  color: #fff;
+  font-weight: normal;
+}
+.features .right-text .right-icons {
+  display: flex;
+  padding-left: 60px;
+  margin-top: 20px;
+}
+.features .right-text .right-icons i {
+  font-size: 20px;
+  margin-right: 30px;
+}
+.features .right-text .right-icons h3 {
+  font-weight: normal;
+} */
+/* end features */
+/* start design*/
+.design {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  height: 600px;
+  /* this is position for overlay to color black */
+  position: relative;
+  background-image: url(../images/design-features.jpg);
+  /* dont forget background-size:cover for dnot do repeat to the photo */
+  background-size: cover;
+  display: flex;
+  /* this is prpoerty to do center in vertical عموديا */
+  align-items: center;
+  overflow: hidden;
+}
+.design::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgb(0 0 0 /50%);
+  width: 100%;
+  height: 100%;
+}
+.design .image {
+  /* he take position relative to save the position in the element  */
+  position: relative;
+  bottom: -150px;
+  text-align: center;
+}
+.design .image,
+.text {
+  /* this is flex:1; = 50% from width becouse this is 2 element   */
+  flex: 1;
+  position: relative;
+  /* to be up overlay  */
+  z-index: 2;
+}
+@media (max-width: 767px) {
+  .design .image {
+    display: none;
+    /* هنا لما الصورة هتختفي مش هيبقا غير التكست بس وهو واخد فلكس واحد1  يعني هياخد المساحة كلها طبيعي جدا  */
+  }
+}
+.design .text {
+  color: #fff;
+  padding: 50px;
+  background-color: rgb(15 116 143 / 70%);
+}
+.design .text h2 {
+  /* توحيد التنسيقات في ال text الي فوق */
+  font-size: 32px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+.design .text ul li {
+  padding: 10px;
+}
+/* يجب استخدام هذه التنسيقات حتي يمكن اضافة الايكونه عن طريق 
+  ملف ال سي اس اس تغيير ال فونت فاملي وال فونت ويت للعنصر الي عايز تضيف الايكونه عندو
+واهم حاجة استعمال باك اسلاش \ جو ال كونتينت  */
+.design .text ul li::before {
+  font-family: "font awesome 5 free";
+  content: "\f108";
+  font-weight: 900;
+  margin-right: 20px;
+  /* هنا بدي بوسشن ريلاتف علشان تتحرك من مكانها او علي نفسها   */
+  position: relative;
+  top: 1px;
+}
+/* end design*/
+/* start portfolio */
+.portfolio {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.portfolio ul.all-porto {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+.portfolio ul.all-porto li {
+  font-size: 18px;
+  /*usepaddingtolihavewidthandheighttoseebackground-color*/
+  padding: 10px;
+  margin-right: 2px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.portfolio ul.all-porto li.active,
+.portfolio ul.all-porto li:hover {
+  background-color: var(--second-color);
+  color: #fff;
+}
+.portfolio .my-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+}
+.portfolio .my-portfolio .porto-box {
+  /* becouse the caption take position absolute  */
+  position: relative;
+  /* this is valuo for hidden the caption */
+  overflow: hidden;
+}
+.portfolio .my-portfolio .porto-box img {
+  /*max-widdth:100%;
+    دامشهيسمح انالصورةتصغرانماالفوق هيسمحانالصورةتصغروتكبرزيماانتاعايز*/
+  max-width: 100%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+@media (min-width: 768px) {
+  .portfolio .my-portfolio .porto-box {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1199px) {
+  .portfolio .my-portfolio .porto-box {
+    flex-basis: 25%;
+  }
+}
+.portfolio .my-portfolio .porto-box .caption {
+  position: absolute;
+  background-color: white;
+  padding: 20px;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.portfolio .my-portfolio .porto-box:hover .caption {
+  bottom: 0;
+}
+.portfolio .my-portfolio .porto-box:hover img {
+  transform: rotate(3deg) scale(1.1);
+  -webkit-transform: rotate(3deg) scale(1.1);
+  -moz-transform: rotate(3deg) scale(1.1);
+  -ms-transform: rotate(3deg) scale(1.1);
+  -o-transform: rotate(3deg) scale(1.1);
+}
+.portfolio .my-portfolio .porto-box h4 {
+  font-weight: normal;
+}
+.portfolio .my-portfolio .porto-box p {
+  color: var(--transparent-color);
+  margin-top: 10px;
+}
+.portfolio .more {
+  background-color: var(--transparent-color);
+  display: block;
+  width: fit-content;
+  padding: 15px 20px;
+  margin: 30px auto;
+}
+.portfolio .more a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* end portfolio */
+/* start video */
+
+.super .video {
+  position: relative;
+}
+.super .video video {
+  width: 100%;
+}
+.video::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: rgb(0 0 0 /50%);
+}
+.super .video .center {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  background-color: rgb(15 116 143 / 60%);
+  color: #fff;
+  padding: 50px;
+}
+.super .video .center h2 {
+  margin-bottom: 30px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.super .video .center p {
+  margin-bottom: 30px;
+}
+.super .video .center span {
+  background-color: #000;
+  padding: 10px 15px;
+  width: fit-content;
+  margin: 0px auto;
+  text-transform: uppercase;
+}
+/* end video */
+/* start about us  */
+.about-us {
+  padding-top: var(--section-padding);
+  position: relative;
+  /* علشان نخفي الجزء التحت من الصوره  */
+  overflow: hidden;
+}
+.about-us .img {
+  margin: 0 auto;
+  left: 0px;
+  max-width: 600px;
+  position: relative;
+  bottom: -120px;
+  /* z-index for visibil after all-about */
+}
+.about-us .img img {
+  max-width: 100%;
+  /* علشان الصوره ترجع مكانها الطبيعي  */
+  margin-top: -120px;
+}
+/* end about us */
+/* start all-about */
+.all-about {
+  background-image: url(/images/stats.png);
+  background-size: cover;
+  position: relative;
+  /* z-index: for up the .img; */
+  z-index: 2;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+@media (max-width: 767px) {
+  .all-about {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+.all-about::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: rgb(0 0 0 /50%);
+}
+.all-about .resalt {
+  display: flex;
+  flex-wrap: wrap;
+}
+.all-about .resalt .box-resalt {
+  background-color: #21597a;
+  z-index: 5;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  /* flex:1 to take full width */
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+  flex-basis: 1;
+}
+@media (max-width: 991px) {
+  .all-about .resalt .box-resalt {
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .all-about .resalt .box-resalt {
+    flex-basis: 100%;
+    padding: 40px 0;
+  }
+}
+.all-about .resalt .box-resalt i {
+  width: 40px;
+  height: 40px;
+  font-size: 12px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.all-about .resalt .box-resalt span {
+  margin: 15px 0;
+  font-size: 40px;
+  font-weight: bold;
+}
+.all-about .resalt .box-resalt p {
+  font-size: 14px;
+}
+/* end all-about */
+
+/* start Testimonials */
+.testimonials {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.testimonials .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.testimonials .container .testimon,
+.skills {
+  flex-basis: 45%;
+}
+@media (max-width: 991px) {
+  .testimonials .container .testimon,
+  .skills {
+    flex-basis: 100%;
+  }
+}
+/* start compond for testimonation */
+.first-div {
+  text-align: center;
+}
+.first-div h3 {
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+.first-div p {
+  color: #777;
+  margin-bottom: 60px;
+  max-width: 100%;
+  font-size: 14px;
+}
+/* end compond for testimonation */
+.testimonials .container .testimon .second-div {
+  display: flex;
+  padding: 0 20px;
+}
+.testimonials .container .testimon .second-div img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.testimonials .container .testimon .second-div .text {
+  /* this is position fro after  */
+  position: relative;
+}
+
+.testimonials .container .testimon .second-div .text p {
+  line-height: 1.8;
+  min-width: 310px;
+}
+@media (max-width: 767px) {
+  .testimonials .container .testimon .second-div {
+    flex-direction: column;
+    text-align: center;
+  }
+  .testimonials .container .testimon .second-div img {
+    margin: 0 auto 20px;
+  }
+  .testimonials .container .testimon .second-div .text p {
+    min-width: 100%;
+  }
+}
+
+.testimonials .container .testimon .second-div .text div {
+  color: #777;
+  padding: 20px 0;
+  text-align: right;
+  border-bottom: 1px solid #aaa;
+}
+.testimonials .container .testimon .swetch ul.bullets {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+.testimonials .container .testimon .swetch ul.bullets li {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #aaa;
+  background-color: transparent;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.testimonials .container .testimon .swetch ul.bullets li.active,
+.testimonials .container .testimon .swetch ul.bullets li:hover {
+  background-color: var(--second-color);
+  border: 1px solid var(--second-color);
+}
+.testimonials .skills .big-line {
+  margin-bottom: 25px;
+}
+.testimonials .skills .big-line h4 {
+  font-weight: normal;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.testimonials .skills .big-line .color-gray {
+  height: 25px;
+  background-color: #ddd;
+}
+.testimonials .skills .big-line .color-gray span {
+  display: inline-block;
+  height: 100%;
+  color: var(--transparent-color);
+  background-color: var(--second-color);
+  position: relative;
+}
+.testimonials .skills .big-line .color-gray span::before {
+  content: attr(deta-progress);
+  position: absolute;
+  color: #fff;
+  background-color: #000;
+  font-size: 14px;
+  padding: 4px;
+  right: -18px;
+  top: -30px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.testimonials .skills .big-line .color-gray span::after {
+  content: "";
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent;
+  right: -10px;
+  top: -10px;
+}
+/* end Testimonials */
+/* start brake */
+.brake .text {
+  background-image: url(/images/quote.jpg);
+  background-size: cover;
+  padding: 100px 0;
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+.brake .text::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  left: 0;
+  top: 0;
+  background-color: rgb(0 0 0 /70%);
+  width: 100%;
+  height: 100%;
+}
+.brake .text q {
+  font-size: 28px;
+  /* take display inline-block to respect the width */
+  display: inline-block;
+  text-transform: lowercase;
+  max-width: 1000px;
+  margin-bottom: 30px;
+}
+.brake .text q::after {
+  font-family: "font awesome 5 free";
+  content: "\f10e";
+  font-weight: 600;
+  margin-right: 20px;
+  position: relative;
+  top: -px;
+  font-size: 10px;
+}
+.brake .text q::before {
+  font-family: "font awesome 5 free";
+  content: "\f10d";
+  font-weight: 600;
+  /* margin-right: 20px; */
+  position: relative;
+  top: -10px;
+  font-size: 10px;
+}
+
+/* end brake */
+/* start pricing */
+.pricing {
+  padding-bottom: var(--section-padding);
+  padding-top: var(--section-padding);
+}
+.pricing .container .offers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+.pricing .container .offers .offer {
+  text-align: center;
+  background-color: #fdfdfd;
+}
+.pricing .container .offers .head {
+  padding: 40px 0;
+  border-top: 1px solid var(--second-color);
+  border-bottom: 1px solid var(--second-color);
+}
+.pricing .container .offers .head h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.pricing .container .offers .head p {
+  font-size: 60px;
+  font-weight: bold;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+  right: -30px;
+}
+.pricing .container .offers .head p sup {
+  top: 0;
+  left: -15px;
+  font-weight: normal;
+  position: absolute;
+}
+.pricing .container .offers .head p sup,
+sub {
+  font-size: 24px;
+}
+.pricing .container .offers ul {
+  padding: 30px;
+}
+.pricing .container .offers ul li {
+  position: relative;
+}
+.pricing .container .offers ul li:not(:last-child) {
+  padding-bottom: 30px;
+}
+.pricing .container .offers ul li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 1px;
+  background-color: var(--second-color);
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-70px);
+  -webkit-transform: translateX(-70px);
+  -moz-transform: translateX(-70px);
+  -ms-transform: translateX(-70px);
+  -o-transform: translateX(-70px);
+}
+.pricing .container .offers .body p {
+  width: fit-content;
+  padding: 20px 0;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--second-color);
+}
+.pricing .container .offers .foot {
+  padding: 40px;
+  border-top: 1px solid var(--second-color);
+}
+.pricing .container .offers .foot P {
+  border: 1px solid var(--second-color);
+  padding: 20px 25px;
+  width: fit-content;
+  margin: 0 auto;
+  color: #3f51b5;
+}
+.pricing .contact-text {
+  text-align: center;
+  font-size: 22px;
+  margin-top: 40px;
+}
+.pricing .container .contact {
+  margin: auto;
+  text-decoration: none;
+  margin-top: 30px;
+  display: block;
+  padding: 20px 30px;
+  background-color: var(--second-color);
+  width: fit-content;
+  color: #fff;
+}
+/* end pricing */
+/* start subscribe */
+.supscribe {
+  padding-bottom: var(--section-padding);
+  padding-top: var(--section-padding);
+  background-image: url(/images/subscribe.jpg);
+  background-size: cover;
+  position: relative;
+  color: #fff;
+}
+.supscribe::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgb(0 0 0 /60%);
+  width: 100%;
+  height: 100%;
+}
+.supscribe .container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 991px) {
+  .supscribe .container {
+    flex-direction: column;
+  }
+}
+.supscribe .container form {
+  display: flex;
+  position: relative;
+  width: 500px;
+  max-width: 100%;
+}
+.supscribe .container form i {
+  color: #fff;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.supscribe .container form input[type="email"] {
+  padding: 20px 20px 20px 60px;
+  border: 1px solid #fff;
+  border-right: none;
+  color: #fff;
+  background-color: transparent;
+  caret-color: var(--second-color);
+  width: calc(100% - 130px);
+}
+.supscribe .container form input[type="email"]:focus,
+.supscribe .container form input[type="email"]:focus {
+  outline: none;
+}
+.supscribe .container form input[type="submit"] {
+  width: 130px;
+  background-color: var(--second-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  border-left: none;
+  text-transform: uppercase;
+}
+.supscribe .container form ::placeholder {
+  color: #fff;
+}
+.supscribe .container p.text {
+  line-height: 2;
+  margin-left: 50px;
+}
+@media (max-width: 991px) {
+  .supscribe .container p {
+    margin: 30px 0 0;
+  }
+}
+/* end subscribe */
+/* strat contact us */
+.contact-us {
+  padding-bottom: var(--section-padding);
+  padding-top: var(--section-padding);
+}
+.contact-us .container .content {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .contact-us .container .content {
+    flex-direction: column-reverse;
+  }
+}
+.contact-us .container .content form {
+  flex-basis: 70%;
+}
+.contact-us .container .content form .main-input {
+  width: 100%;
+  display: block;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.contact-us .container .content form .main-input:focus {
+  outline: none;
+}
+.contact-us .container .content form textarea.main-input {
+  height: 200px;
+}
+.contact-us .container .content form input[type="submit"] {
+  padding: 20px 20px;
+  background-color: var(--second-color);
+  color: #fff;
+  border: none;
+  /* this is valuo for do the submit in last right */
+  display: flex;
+  margin-left: auto;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.contact-us .container .content .info {
+  flex-basis: 25%;
+}
+.contact-us .container .content .info h4 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+.contact-us .container .content .info span {
+  margin-bottom: 10px;
+  display: block;
+  color: #777;
+}
+.contact-us .container .content .info h4:last-of-type {
+  margin-top: 70px;
+}
+@media (max-width: 767px) {
+  .contact-us .container .content .info {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .contact-us .container .content .info h4:last-of-type {
+    margin-top: 30px;
+  }
+  .contact-us .container .content form input[type="submit"] {
+    margin: auto;
+  }
+}
+.contact-us .container .content .info address {
+  color: #777;
+  line-height: 2;
+}
+/* end contact us */
+/* start footer */
+.footer {
+  background-image: url(/images/subscribe.jpg);
+  background-size: cover;
+  text-align: center;
+  position: relative;
+}
+.footer::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(0 0 0 /70%);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.footer .content {
+  position: relative;
+  z-index: 2;
+}
+.footer .content img {
+ margin: 40px auto ;
+}
+.footer .content .icons {
+  color: #fff;
+  margin: 30px;
+}
+.footer .content .icons h2 {
+  font-size: 22px;
+  width: fit-content;
+  margin: 0px auto 30px;
+  padding: 20px;
+  border-bottom: 1px solid #fff;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.footer .content .icons i {
+  margin-right: 20px;
+  font-size: 14px;
+}
+.footer .content p {
+  color: #fff;
+  padding: 30px;
+  font-size: 14px;
+}
+.footer .content p span {
+  color: var(--second-color);
+  font-weight: bold;
+}
+/* end footer */
